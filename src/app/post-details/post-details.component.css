@@ -1,0 +1,59 @@
+.post-detail {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.post-body {
+    line-height: 1.6;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.comment .comment-header {
+    display: block;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-info {
+    display: block;
+    margin-bottom: 5px;
+    /* Optional: Add some space between the spans */
+}
+
+.no-comments {
+    margin-top: 20px;
+    font-style: italic;
+    color: #888;
+}
+
+.galleria-wrapper {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}

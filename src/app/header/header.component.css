@@ -1,0 +1,26 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, #4b6cb7, #182848); 
+  color: white;
+  text-align: center;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none; 
+  color: white; 
+  padding: 0.5rem 1rem; 
+  transition: color 0.3s ease; 
+}
+
+a:hover {
+  color: red; 
+}
+
+
+.active-link {
+  text-decoration: underline; 
+}

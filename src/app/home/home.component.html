@@ -1,0 +1,30 @@
+<div class="p-grid p-justify-center">
+  <div class="p-col-8">
+    <h2>Posts</h2>
+    <div *ngIf="filteredPosts.length === 0" class="no-posts">No posts found.</div>
+    <div class="p-grid" *ngFor="let post of filteredPosts">
+      <div class="p-col-12">
+        <div class="card">
+          <h3 (click)="goToPostDetails(post)" pTooltip="Click for details" tooltipPosition="top">{{ post.title }}</h3>
+          <p>{{ post.body }}</p>
+          <p><strong>Author:</strong> {{ post.userName }}</p>
+          <button class="btn-comments" (click)="toggleComments(post)">
+            {{ post.showComments ? 'Hide Comments' : 'Show Comments' }}
+          </button>
+          <div *ngIf="post.showComments">
+            <div *ngFor="let comment of post.comments" class="comment">
+              <div class="comment-header">
+                <span><strong>Name:</strong> {{ comment.name }}</span>
+                <span><strong>Email:</strong> {{ comment.email }}</span>
+              </div>
+              <div class="comment-body">
+                <p>{{ comment.body }}</p>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

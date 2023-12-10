@@ -1,0 +1,28 @@
+<div class="post-detail">
+    <h2 class="post-title">{{ post?.title }}</h2>
+    <p class="author"><strong>Author:</strong> {{ post?.userName }}</p>
+
+    <div class="galleria-wrapper">
+        <p-galleria [value]="post?.albums"  [showItemNavigators]="true" [showThumbnails]="false" [containerStyle]="{ 'max-width': '640px' }">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.url" style="width: 100%; display: block;" />
+            </ng-template>
+        </p-galleria>
+    </div>
+
+    <p class="post-body">{{ post?.body }}</p>
+
+    <h3>Comments</h3>
+    <div *ngIf="post?.comments && post.comments.length > 0" class="comments-list">
+        <div *ngFor="let comment of post.comments" class="comment p-shadow-2">
+            <div class="comment-header">
+                <span class="comment-info"><strong>Name:</strong> {{ comment.name }}</span>
+                <span class="comment-info"><strong>Email:</strong> {{ comment.email }}</span>
+            </div>
+            <div class="comment-body">
+                <p>{{ comment.body }}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!post?.comments || post.comments.length === 0" class="no-comments">No comments found.</div>
+</div>

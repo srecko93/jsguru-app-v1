@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="limit-select">
+        <label for="limitSelect" class="limit-label">Select Limit:</label>
+        <div class="custom-select">
+            <select id="limitSelect" [(ngModel)]="selectedLimit" (change)="onLimitChange()" class="styled-select">
+                <option *ngFor="let limit of limitOptions" [value]="limit">{{ limit }}</option>
+            </select>
+            <span class="select-arrow"></span>
+        </div>
+    </div>
+    
+
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="activeIndex" [rows]="1" [totalRecords]="totalImages"
+    class="paginator"></p-paginator>
+
+    <div class="gallery-wrapper">
+        <p-galleria [(activeIndex)]="activeIndex" [showThumbnails]="false" [value]="images" [showIndicators]="false"
+            [showItemNavigatorsOnHover]="true" [showItemNavigators]="true" [containerStyle]="{ 'max-width': '640px' }"
+            class="responsive-gallery">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.url" style="width: 100%; display: block;" />
+            </ng-template>
+            <ng-template pTemplate="caption" let-item>
+                <h4 style="margin-bottom: .5rem; color: #ffffff;">{{ item.title }}</h4>
+            </ng-template>
+        </p-galleria>
+    </div>
+</div>

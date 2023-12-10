@@ -1,0 +1,17 @@
+
+<header class="header">
+    <p-menubar>
+        <ng-template pTemplate="start">
+            <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" />
+            <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a routerLink="/images" routerLinkActive="active-link" class="nav-link" [routerLinkActiveOptions]="{ exact: true }">Images</a>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <span class="p-input-icon-left" *ngIf="showSearchBar">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="Search by Author" (input)="onSearchChange($event)"
+                    class="p-inputtext p-component w-full" />
+            </span>
+        </ng-template>
+    </p-menubar>
+</header>
